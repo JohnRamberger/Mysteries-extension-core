@@ -58,8 +58,8 @@ project.afterEvaluate {
     publishing {
         publications {
             create<MavenPublication>("mavenJava") {
-                groupId = "com.jramberger.mysteries.extension"
-                artifactId = "extension-core"
+                groupId = "com.github.JohnRamberger"
+                artifactId = "Mysteries-extension-core"
 
                 afterEvaluate {
                     from(components["release"])
