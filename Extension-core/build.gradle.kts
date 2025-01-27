@@ -65,4 +65,3 @@ project.afterEvaluate {
         }
     }
 }
-
