@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ktlint)
+    `maven-publish`
 }
 
 android {
@@ -31,6 +32,13 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    publishing {
+        singleVariant("release") {
+            withJavadocJar()
+            withSourcesJar()
+        }
+    }
 }
 
 dependencies {
@@ -46,3 +54,18 @@ ktlint {
     android = true // to use the Android Studio KtLint plugin style
     ignoreFailures = false
 }
+project.afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("mavenJava") {
+                groupId = "com.jramberger.mysteries.extension"
+                artifactId = "extension-core"
+
+                afterEvaluate {
+                    from(components["release"])
+                }
+            }
+        }
+    }
+}
+
