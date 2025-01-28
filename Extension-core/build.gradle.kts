@@ -1,6 +1,6 @@
 plugins {
-    id(libs.plugins.android.library.get().pluginId)
-    id(libs.plugins.kotlin.android.get().pluginId)
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ktlint)
     `maven-publish`
 }
@@ -41,13 +41,19 @@ android {
     }
 }
 
-dependencies {}
+dependencies {
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+}
 
 ktlint {
     android = true // to use the Android Studio KtLint plugin style
     ignoreFailures = false
 }
-
 project.afterEvaluate {
     publishing {
         publications {
