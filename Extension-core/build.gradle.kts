@@ -54,6 +54,7 @@ ktlint {
 dependencies {
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.okhttp)
+    implementation(libs.jsoup)
 }
 
 project.afterEvaluate {
