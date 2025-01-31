@@ -33,18 +33,18 @@ interface NovelSource {
     /**
      * Get a paginated list of popular novels.
      * @param client The OkHttpClient instance to use for the request.
-     * @param request The request to use for the API call.
+     * @param requestBuilder The Request.Builder instance to use for the request.
      * @param pageNumber The page number to fetch.
      */
     fun getPopularNovels(
         client: OkHttpClient,
-        request: Request,
+        requestBuilder: Request.Builder,
         pageNumber: Int = 1,
     ): List<NovelMetadata>
 
     fun getNovelDetails(
         client: OkHttpClient,
-        request: Request,
+        requestBuilder: Request.Builder,
         novelId: String,
     ): StateFlow<Novel>
 }
