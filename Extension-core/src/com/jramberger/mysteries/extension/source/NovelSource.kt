@@ -19,6 +19,11 @@ interface NovelSource {
     val name: String
 
     /**
+     * The base URL of the source.
+     */
+    val baseUrl: String
+
+    /**
      * The language of the source. Use [Language] for the values.
      * If the source supports multiple languages, use [Language.MULTI].
      * @see Language
