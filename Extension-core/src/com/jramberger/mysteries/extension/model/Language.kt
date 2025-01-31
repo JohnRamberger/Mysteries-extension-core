@@ -1,4 +1,4 @@
-package com.jramberger.mysteries.extension
+package com.jramberger.mysteries.extension.model
 
 enum class Language(private val languageTag: String) {
     EN("en"),

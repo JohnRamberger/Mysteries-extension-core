@@ -51,6 +51,11 @@ ktlint {
     ignoreFailures = false
 }
 
+dependencies {
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.okhttp)
+}
+
 project.afterEvaluate {
     publishing {
         publications {
