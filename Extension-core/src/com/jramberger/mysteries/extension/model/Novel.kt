@@ -8,7 +8,7 @@ data class Novel(
     /**
      * The title of the novel.
      */
-    val title: String,
+    val title: String? = null,
     /**
      * The novel cover's URL.
      */
@@ -16,5 +16,5 @@ data class Novel(
     /**
      * The author(s) of the novel.
      */
-    val authors: Collection<String> = emptySet(),
+    val authors: Collection<String>? = null,
 )
