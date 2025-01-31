@@ -16,7 +16,7 @@ interface NovelSource {
      * If the source supports multiple languages, use [Language.MULTI].
      * @see Language
      */
-    val language: String
+    val language: Language
 
     /**
      * Test function to check if the source is working.
